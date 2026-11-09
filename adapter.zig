@@ -1,4 +1,4 @@
-//! TOML (D105): values as TOML spells them, and whole files with `[table]` sections. Colors and
+//! TOML: values as TOML spells them, and whole files with `[table]` sections. Colors and
 //! joined values are strings, since TOML has neither; floats always keep a `.` or an exponent,
 //! since `1` would be read back as an integer.
 
@@ -6,7 +6,7 @@ const std = @import("std");
 const kosm = @import("kosm");
 const Parser = @import("Parser.zig");
 
-/// The adapter for `.toml` files; enables `generate`, `block` (D71) and `edit`.
+/// The adapter for `.toml` files; enables `generate`, `block` and `edit`.
 pub const adapter: kosm.Adapter = .{
     .name = "toml",
     .extensions = &.{".toml"},
@@ -97,7 +97,7 @@ fn writeHeader(writer: *std.Io.Writer, path: *const HeaderPath, open: []const u8
     wrote_anything.* = true;
 }
 
-/// Writes one value; with `parser`, enables `edit` (D42). Tables are inline tables here.
+/// Writes one value; with `parser`, enables `edit`. Tables are inline tables here.
 fn format(writer: *std.Io.Writer, value: kosm.Value, context: *kosm.Adapter.Context) kosm.Adapter.Error!void {
     switch (value) {
         .string => |text| try writeString(writer, text),
@@ -140,7 +140,7 @@ fn format(writer: *std.Io.Writer, value: kosm.Value, context: *kosm.Adapter.Cont
     }
 }
 
-/// A value's text inside a string: parts of a joined value are written back to back (D89).
+/// A value's text inside a string: parts of a joined value are written back to back.
 fn writePlain(writer: *std.Io.Writer, value: kosm.Value, context: *kosm.Adapter.Context) kosm.Adapter.Error!void {
     switch (value) {
         .string, .raw => |text| try writer.writeAll(text),

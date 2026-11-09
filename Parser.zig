@@ -1,4 +1,4 @@
-//! Reads TOML into the tree kosm matches paths against (D30, D105). Hand-written (D40): a
+//! Reads TOML into the tree kosm matches paths against. Hand-written: a
 //! key belongs to the `[header]` above it, `[[x]]` elements lie scattered through the file, and
 //! dotted keys and headers both nest, which no node-name mapping expresses. The tree is the
 //! file's meaning, not its spelling: `[a.b]`, `a.b = 1` and `a = { b = 1 }` all reach `a.b`, and

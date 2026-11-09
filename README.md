@@ -1,17 +1,17 @@
 # kosm_toml
 
-TOML for kosm: the `toml` adapter reads and writes `.toml` files (D105), such as alacritty's
+TOML for kosm: the `toml` adapter reads and writes `.toml` files, such as alacritty's
 config and vicinae's themes. Apps use it through `output.edit`, `output.generate` and
-`output.block`; it knows no app (D1).
+`output.block`; it knows no app.
 
-- **Paths:** every way TOML nests a key reaches the same path (D30). `[colors.primary]` with
+- **Paths:** every way TOML nests a key reaches the same path. `[colors.primary]` with
   `background = ...`, `colors.primary.background = ...` and `colors = { primary = { background = ... } }`
   are all `colors.primary.background`, and a table spelled in several places is one table.
-  A key holding a dot is a quoted segment: `"dim.foreground"` (D32).
+  A key holding a dot is a quoted segment: `"dim.foreground"`.
 - **Arrays of tables:** `[[keyboard.bindings]]` headers are one list, reached through
-  `selection.elements` (D77, D80); a `[keyboard.bindings.x]` header below one belongs to its last
+  `selection.elements`; a `[keyboard.bindings.x]` header below one belongs to its last
   element, as TOML says.
-- **Values:** strings are written as basic strings (`"..."`), colors and joined values (D89) as
+- **Values:** strings are written as basic strings (`"..."`), colors and joined values as
   strings too, `#rrggbb` by default. A float always keeps a `.` or an exponent (`13.0`), since
   `13` would be read back as an integer; `inf` and `nan` are written as TOML spells them. Booleans
   are only `true`/`false`, so `format.boolean` must stay `.true_false`. Lists and tables set by

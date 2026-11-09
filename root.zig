@@ -1,4 +1,4 @@
-//! TOML: the `toml` adapter, for alacritty, vicinae themes and every other `.toml` config (D105).
+//! TOML: the `toml` adapter, for alacritty, vicinae themes and every other `.toml` config.
 
 const std = @import("std");
 
