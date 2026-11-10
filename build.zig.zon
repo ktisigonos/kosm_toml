@@ -4,7 +4,10 @@
     .fingerprint = 0xd1dcb4a7989a0906, // Changing this has security and trust implications.
     .minimum_zig_version = "0.17.0",
     .dependencies = .{
-        .kosm = .{ .path = "../.." },
+        .kosm = .{
+            .url = "git+https://git.nnstdios.com/nnra6864/kosm?ref=master#643fd4d1d5dc0b6ff4031807e49899b599b6b32f",
+            .hash = "kosm-0.0.0-YCShsnG0CQCP-gZBfKb_GOU17QDk8456-_sN89apPd2J",
+        },
     },
     .paths = .{
         "build.zig",
