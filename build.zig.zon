@@ -5,8 +5,8 @@
     .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .kosm = .{
-            .url = "git+https://git.nnstdios.com/nnra6864/kosm?ref=master#643fd4d1d5dc0b6ff4031807e49899b599b6b32f",
-            .hash = "kosm-0.0.0-YCShsnG0CQCP-gZBfKb_GOU17QDk8456-_sN89apPd2J",
+            .url = "git+https://git.nnstdios.com/ktisigonos/kosm?ref=master#8287196759d5e9001a092d16ba4d1e71065fdbfc",
+            .hash = "kosm-0.0.0-YCShsil5CgCzARk07rv-MaLMf7rL5zQCQ7pE9Or3jIb5",
         },
     },
     .paths = .{
